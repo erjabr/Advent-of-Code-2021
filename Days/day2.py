@@ -5,6 +5,7 @@ def read_data(f):
             list.append(line)
     return list
 
+
 def count_direction(data):
     hor = 0
     ver = 0
@@ -32,10 +33,12 @@ def count_aim(data):
             aim += int(splitted[1])
         if splitted[0] == 'up':
             aim -= int(splitted[1])
-
-    print(ver*hor)
+    #print(ver*hor)
 
 f = "../Datasets/data2.txt"
 data = read_data(f)
-#count_direction(data)
 count_aim(data)
+
+
+
+

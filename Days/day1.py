@@ -40,8 +40,12 @@ def sum_windows(l):
     return sum
 
 f = "../Datasets/data1.py"
+import time
+start_time = time.perf_counter_ns()
 data = read_data(f)
 windows = sliding_window(data,window_size=3)
 #c_part_one = count_depth(data)
 c_part_two = count_depth(sum_windows(windows))
-print(c_part_two)
+end_time = time.perf_counter_ns()
+print((end_time-start_time)/1000000)
+
