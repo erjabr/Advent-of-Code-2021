@@ -8,12 +8,9 @@ import numpy as np
 def check_bingo(board,input):
     tracker = np.zeros((len(board),len(board[0])),dtype=bool)
     boolean = False
-    #Vertikalt
     for i in range(len(board)):
         counter = 0
         for j in range(len(board[i])):
-
-            #Vertikalt
             if int(board[i][j]) in input:
                 counter += 1
                 tracker[i][j] = True
@@ -23,7 +20,6 @@ def check_bingo(board,input):
     for i in range(len(board)):
         counter = 0
         for j in range(len(board[i])):
-            # Column vis
             if int(board[j][i]) in input:
                 counter += 1
                 tracker[j][i] = True
@@ -32,20 +28,20 @@ def check_bingo(board,input):
 
     counter = 0
     for i in range(len(board)):
-        # Diagonalt
         if int(board[i][i]) in input:
             counter += 1
             tracker[i][i] = True
         if counter == 5:
             boolean = True
     counter = 0
+
     for i in range(len(board)):
-        # Diagonalt
         if int((board[i][len(board) - i - 1])) in input:
             counter += 1
             tracker[i][len(board) - i - 1] = True
         if counter == 5:
            boolean = True
+
     if(boolean):
         #("Bingo")
         #Sum the values that are not visited:
@@ -54,7 +50,6 @@ def check_bingo(board,input):
             for j in range(len(board[0])):
                 if tracker[i][j] == False:
                     sum += int(board[i][j])
-
         print(sum*input[-1])
         return True
     return False
