@@ -5,8 +5,10 @@ def read_data(f):
             s.append(line)
     return s
 import numpy as np
+
 def check_bingo(board,input):
     tracker = np.zeros((len(board),len(board[0])),dtype=bool)
+
     boolean = False
     for i in range(len(board)):
         counter = 0

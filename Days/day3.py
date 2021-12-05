@@ -8,7 +8,7 @@ def read_data(f):
             list.append(line)
     return list
 
-def count_bits(array):
+def count_bits(converted_list):
     col = defaultdict(int)
     #dic = {i:counter, i:counter}
     for val in converted_list:
@@ -44,9 +44,6 @@ def bit_crit_co2(array,idx):
         return zeros
     else:
         return ones
-
-
-
 
 def bit_crit_oxy(array,idx):
     c = 0
