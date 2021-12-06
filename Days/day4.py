@@ -27,23 +27,6 @@ def check_bingo(board,input):
                 tracker[j][i] = True
             if counter == 5:
                 boolean = True
-
-    counter = 0
-    for i in range(len(board)):
-        if int(board[i][i]) in input:
-            counter += 1
-            tracker[i][i] = True
-        if counter == 5:
-            boolean = True
-    counter = 0
-
-    for i in range(len(board)):
-        if int((board[i][len(board) - i - 1])) in input:
-            counter += 1
-            tracker[i][len(board) - i - 1] = True
-        if counter == 5:
-           boolean = True
-
     if(boolean):
         #("Bingo")
         #Sum the values that are not visited:

@@ -13,8 +13,6 @@ def read_data(f):
             y1 = int(y1)
             x2 = int(x2)
             y2 = int(y2)
-
-
             #Needed to know which direction we go in, for our diagonal part
             dx = 1 if x2 >= x1 else -1
             dy = 1 if y2 >= y1 else -1
@@ -38,6 +36,9 @@ def read_data(f):
             if zeros[x][y] > 1:
                 c += 1
     print(c)
-
+import time
+t_start = time.perf_counter_ns()
 f = "../Datasets/data5.txt"
 read_data(f)
+t_end = time.perf_counter_ns()
+print((t_end-t_start)/1000000)
