@@ -8,13 +8,11 @@ ints = list(map(int, list(vals)))
 dic = defaultdict(float)
 
 for i in range(max(ints)):
-    #print(i)
     count = 0
     steps = 0
     for val in ints:
         steps = abs(val-i)
         count += ((steps*steps) + steps) / 2
     dic[i] = count
-
 
 print(min(dic.values()))
